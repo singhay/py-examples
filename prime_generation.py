@@ -1,3 +1,5 @@
+# This contains multiple methods for generating primes.
+# I use this for hackerrank coding challenges
 def primes2(n):
     """ Input n>=6, Returns a list of primes, 2 <= p < n """
     n, correction = n-n%6+6, 2-(n%6>1)
@@ -73,6 +75,10 @@ def c(N):
         if is_prime(i):
             primes.append(i)
     return max(primes)
+    
+# Input
+# First line contains the number of inputs
+# Second and lines after that contains the numbers 
 
 T = int(raw_input())
 for i in range(0,T):
