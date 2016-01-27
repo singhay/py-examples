@@ -1,3 +1,4 @@
+# Game Created while completing Python Course from Codeacademy
 from random import randint
 
 board = []
