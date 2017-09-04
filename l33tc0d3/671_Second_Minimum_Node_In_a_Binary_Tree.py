@@ -9,16 +9,15 @@ class TreeNode(object):
 class Solution(object):
 	"""docstring for Solution"""
 	def findSecondMinimumValue(self, root):
-		def findSecondMinimumValueR(root):
-			mi = []
-			if root:
-				mi = findSecondMinimumValueR(root.left) + [root.val] + findSecondMinimumValueR(root.right)
-			# x = sorted()
-			return mi
-		mi = set(sorted(findSecondMinimumValueR(root)))
-		print(mi)
-		return mi[1] if len(mi)>1 else -1
-
+		mix = [float('inf')]
+		def findAllNodes(head):
+			if not head: return
+			if root.val < head.val < mix[0]:
+				mix[0] = head.val
+			findAllNodes(head.left)
+			findAllNodes(head.right)
+		findAllNodes(root)
+		return mix[0] if mix[0] != float('inf') else -1
 
 
 
